@@ -95,7 +95,6 @@ $("#signupForm").submit(function(event){
     if (!isFormValid()) {
         event.preventDefault();
     }
-
 });//signupForm
 
 function isFormValid(){
@@ -112,6 +111,13 @@ function isFormValid(){
     if ($("#password").val() != $("#passwordAgain").val()){
         $("#passwordAgainError").html("Password Mismatch!");
         isValid = false;
+    }
+    if ($("#password").val().length < 6){
+        $("#passwordAgainError").html("Password is too short !");
+        isValid = false;
+    }
+    if(isValid) {
+        window = welcome.html;
     }
     return isValid;
 }
