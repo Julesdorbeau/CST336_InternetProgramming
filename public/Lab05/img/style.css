@@ -3,6 +3,15 @@
 }
 
 #images img {
-    border-radius: 10px;
     height: 150px;
+}
+
+.col-sm-4 {
+    border-width: 10px;
+    border-style: inset;
+    border-color: gray;
+}
+
+p {
+    font-style: italic;
 }
