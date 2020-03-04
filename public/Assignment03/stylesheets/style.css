@@ -2,6 +2,46 @@
     text-align: center;
 }
 
+h1 {
+    text-decoration: underline;
+}
+
 #images img {
     height: 150px;
+    border: 1px solid black;
+}
+
+.col-sm-4 {
+    border-width: 10px;
+    border-style: inset;
+    border-color: lightgray;
+    background: #eeeeee;
+}
+
+.img-desc-start {
+    text-decoration: underline;
+    background: lightblue;
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
+
+.img-desc-suit {
+    font-style: italic;
+}
+
+.img-desc {
+    text-decoration: underline;
+    background: lightyellow;
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
+
+#start {
+    border-color: lightgreen;
+    background: lightcoral;
+}
+
+#random {
+    border-color: lightcoral;
+    background: lightgreen;
 }
