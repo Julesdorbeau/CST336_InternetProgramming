@@ -19,7 +19,3 @@ function research() {
         }
     });
 }
-
-function test() {
-    alert($('input').val());
-}
