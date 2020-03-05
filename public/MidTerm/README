@@ -1,0 +1,13 @@
+Part I. Theory
+
+#1 - a). There are 3 possibles ways to apply a CSS style to an HTML page. We have the linked, embedded, and inline methods. Their preference order is linked, embedded and after inline.
+   - b). The preference between margin and padding in a Box Model is margin.
+
+#2 - a). The difference between !== and !=== is that in the !== case, it will only compare the value and in the !=== case it will compare the value and check the datatype.
+         In both case it will check if the two values are different.
+
+   - b). The value of the variable statement is false.
+
+#3 - The following snippet output is [1,2].
+
+#4 -
