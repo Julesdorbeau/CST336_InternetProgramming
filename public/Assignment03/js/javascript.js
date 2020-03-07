@@ -1,8 +1,10 @@
+//Definition of the variables for the buttons, inputs, random and the EventListener
 document.querySelector('#search').addEventListener('click', research);
 document.querySelector('#randomSearch').addEventListener('click', randomASearch);
 var randomArray = ['otter', 'baseball','penguin', 'a', 'boat', 'paris', 'london', 'amsterdam', 'chicken', 'b', 'c', 'd','e'];
 $(document).ready(firstDisplay());
 
+//Function research used when clicking on the search button
 function research() {
     $.ajax({
         method: "GET",
@@ -12,6 +14,7 @@ function research() {
             query : $('input').val(),
             client_id : 'vBqGLd_U7WuAvwbjXxAqfpWmMtDCADqHPqUaMDwr2po',
         },
+        //Function used when the api request succeed
         success: function (result, status) {
             $('#images').html('');
             result.results.forEach(function(r) {
@@ -21,6 +24,7 @@ function research() {
     });
 }
 
+//Function used to display 3 random images when loading the page
 function firstDisplay(){
     for(var i = 0; i<3; i++) {
         $.ajax({
@@ -39,6 +43,7 @@ function firstDisplay(){
     }
 }
 
+//Function used to display 6 random images when clicking on the random search button in the header
 function randomASearch() {
     $('#images').html('');
     for(var i = 0; i<6; i++) {
