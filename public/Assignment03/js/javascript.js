@@ -18,7 +18,12 @@ function research() {
         success: function (result, status) {
             $('#images').html('');
             result.results.forEach(function(r) {
-                $('#images').append('<div class="col-sm-4"><br><p class="img-desc"> Description : <p class="img-desc-suit">'+ r.alt_description +'</p></p><img src="'+r.urls.small+'" alt="Error"></div>');
+                if(r.likes >= 150) {
+                    var imgToDisplay = "img/check_.png";
+                } else {
+                    var imgToDisplay = "img/cross_.png";
+                }
+                $('#images').append('<div class="col-sm-4"><br><p class="img-desc"> Description : <p class="img-desc-suit">'+ r.alt_description +'</p></p><p class="img-desc"> Likes : <p class="img-desc-suit">'+ r.likes +'</p></p><img class="img-likes" src="'+imgToDisplay+'"><br><img src="'+r.urls.small+'" alt="Error"></div>');
             });
         }
     });
@@ -37,7 +42,12 @@ function firstDisplay(){
             },
             success: function (result, status) {
                 var toDisplay = Math.floor(Math.random() * result.results.length);
-                $('#images').append('<div class="col-sm-4" id="start"><br><p class="img-desc-start"> Description : <p class="img-desc-suit">'+ result.results[toDisplay].alt_description +'</p></p><img src="'+result.results[toDisplay].urls.small+'" alt="Error"></div>');
+                if(result.results[toDisplay].likes >= 2500) {
+                    var imgToDisplay = "img/check_.png";
+                } else {
+                    var imgToDisplay = "img/cross_.png";
+                }
+                $('#images').append('<div class="col-sm-4" id="start"><br><p class="img-desc-start"> Description : <p class="img-desc-suit">'+ result.results[toDisplay].alt_description +'</p></p><p class="img-desc-start"> Likes : <p class="img-desc-suit">'+ result.results[toDisplay].likes +'</p></p><img class="img-likes" src="'+imgToDisplay+'"><br><img src="'+result.results[toDisplay].urls.small+'" alt="Error"></div>');
             }
         });
     }
@@ -57,7 +67,12 @@ function randomASearch() {
             },
             success: function (result, status) {
                 var toDisplay = Math.floor(Math.random() * result.results.length);
-                $('#images').append('<div class="col-sm-4" id="random"><br><p class="img-desc-start"> Description : <p class="img-desc-suit">' + result.results[toDisplay].alt_description + '</p></p><img src="' + result.results[toDisplay].urls.small + '" alt="Error"></div>');
+                if(result.results[toDisplay].likes >= 100) {
+                    var imgToDisplay = "img/check_.png";
+                } else {
+                    var imgToDisplay = "img/cross_.png";
+                }
+                $('#images').append('<div class="col-sm-4" id="random"><br><p class="img-desc-start"> Description : <p class="img-desc-suit">' + result.results[toDisplay].alt_description + '</p></p><p class="img-desc-start"> Likes : <p class="img-desc-suit">'+ result.results[toDisplay].likes +'</p></p><img class="img-likes" src="'+imgToDisplay+'"><br><img src="' + result.results[toDisplay].urls.small + '" alt="Error"></div>');
             }
         });
     }
